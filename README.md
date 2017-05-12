@@ -1,0 +1,1 @@
+# spree_ajax_wishlist
