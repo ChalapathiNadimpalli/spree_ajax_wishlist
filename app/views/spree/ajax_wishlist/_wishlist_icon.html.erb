@@ -1,0 +1,9 @@
+<div class="ajax-wishlist-icon">
+  <%= form_tag toggle_ajax_wishlist_index_path, method: :post, remote: true do %>
+      <% active = wished_product_ids.include?(product.id) %>
+      <%= hidden_field_tag :product_id, product.id %>
+      <%= button_tag class: "wishlist-icon variant-id-#{product.id} #{active ? 'active' : ''}", name: 'wishlist-button', value: '1', type: :submit do %>
+          <span class="glyphicon glyphicon-heart-empty"></span>
+      <% end %>
+  <% end %>
+</div>

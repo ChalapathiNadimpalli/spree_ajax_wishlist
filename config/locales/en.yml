@@ -1,0 +1,9 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  spree:
+    wishlist:
+      unable_to_mark: Unable to mark as wished product
+      invalid_product: Invalid product
+      login_to_wishlist: Login to wishlist a product

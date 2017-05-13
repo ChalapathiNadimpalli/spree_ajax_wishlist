@@ -1,0 +1,4 @@
+<% if !spree_current_user %>
+  window.location = "<%= spree.login_path %>";
+<% else %>
+<% end %>

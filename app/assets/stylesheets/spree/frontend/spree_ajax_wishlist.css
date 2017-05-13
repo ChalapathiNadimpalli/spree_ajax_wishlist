@@ -1,0 +1,17 @@
+/*
+Placeholder manifest file.
+the installer will append this file to the app vendored assets here: 'vendor/assets/stylesheets/spree/frontend/all.css'
+*/
+.ajax-wishlist-icon {
+  position: absolute;
+}
+.ajax-wishlist-icon .wishlist-icon{
+  background-color: transparent;
+  border: none;
+  font-size: 1.6em;
+  color: #d3d3d3;
+}
+
+.ajax-wishlist-icon .wishlist-icon.active {
+  color: #FF6161;
+}
