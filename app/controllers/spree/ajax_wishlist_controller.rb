@@ -6,16 +6,23 @@ class Spree::AjaxWishlistController < Spree::BaseController
 
     @wishlist = Spree::Wishlist.where(user_id: spree_current_user.id, product_id: @product_id).first
 
+    @active = active_status
+
     if @wishlist
-      @wishlist.active = !@wishlist.active
+      @wishlist.active = @active
     else
-      @wishlist = Spree::Wishlist.new(product_id: @product_id, user_id: spree_current_user.id, active: true)
+      @wishlist = Spree::Wishlist.new(product_id: @product_id, user_id: spree_current_user.id, active: @active)
     end
 
     @error = Spree.t('wishlist.unable_to_mark') unless @wishlist.save
   end
 
   private
+
+  def active_status
+    return (params[:active].to_s == 'true' ? true : false) if params[:active]
+     @wishlist ? !@wishlist.active : true
+  end
 
   def valid_product
     valid = Spree::Product.where(id: params[:product_id]).exists?
