@@ -4,12 +4,14 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 */
 .ajax-wishlist-icon {
   position: absolute;
+  z-index: 99999;
 }
 .ajax-wishlist-icon .wishlist-icon{
   background-color: transparent;
   border: none;
   font-size: 1.6em;
   color: #d3d3d3;
+  display: none;
 }
 
 .ajax-wishlist-icon .wishlist-icon.active {

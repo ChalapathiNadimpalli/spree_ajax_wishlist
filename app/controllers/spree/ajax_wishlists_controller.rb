@@ -1,4 +1,14 @@
-class Spree::AjaxWishlistController < Spree::BaseController
+class Spree::AjaxWishlistsController < Spree::BaseController
+
+  def index
+  end
+
+  def in_wishlist
+    active = valid_product && spree_current_user
+    active = Spree::Wishlist.active.where(user_id: spree_current_user.id, product_id: params[:product_id]).exists? if active
+    render json: { result: active }
+  end
+
   def toggle
     return unless valid_product && user_signed_in
 
