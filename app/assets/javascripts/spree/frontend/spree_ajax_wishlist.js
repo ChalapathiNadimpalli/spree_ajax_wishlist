@@ -5,9 +5,11 @@ function set_wishlist_icon(product_id, active) {
     if (active) {
         $(".wishlist-icon.product-id-" + product_id).addClass('active');
         $(".wishlist-active.product-id" + product_id).val('false');
+
     }
     else {
         $(".wishlist-icon.product-id-" + product_id).removeClass('active');
         $(".wishlist-active.product-id" + product_id).val('true');
     }
+    $(".wishlist-icon.product-id-" + product_id).fadeIn(100);
 }

@@ -1,0 +1,12 @@
+<% wished_product_ids = Spree::WishlistHelper::user_wished_product_ids(@products, spree_current_user) %>
+<script>
+  <% @products.each do |product| %>
+    <% active = wished_product_ids.include?(product.id) %>
+    set_wishlist_icon('<%= product.id %>', <%= active %>);
+  <% end %>
+  <% if spree_current_user %>
+    $('button.wishlist-icon').click(function(){
+        $(this).toggleClass('active');
+    });
+  <% end %>
+</script>

@@ -1,8 +1,10 @@
 <script>
     $(document).ready(function(){
         $('.ajax-wishlist-icon .wishlist-icon').fadeIn(100);
-        $('button.wishlist-icon').click(function(){
-          $(this).toggleClass('active');
-        });
+        <% if spree_current_user %>
+          $('button.wishlist-icon').click(function(){
+            $(this).toggleClass('active');
+          });
+        <% end %>
     });
 </script>

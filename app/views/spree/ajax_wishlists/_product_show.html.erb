@@ -1,0 +1,23 @@
+<% if spree_current_user %>
+  <script>
+      $(document).ready(function(){
+          $.getJSON('<%= in_wishlist_ajax_wishlists_path(product_id: @product.id) %>', function(data){
+              var active = false;
+              if (data.result.toString() == 'true') {
+                  active = true;
+              }
+              console.log(active);
+              set_wishlist_icon('<%= @product.id %>', active);
+          }).fail(function() {
+          });
+
+          $('button.wishlist-icon').click(function(){
+              $(this).toggleClass('active');
+          });
+      });
+  </script>
+<% else %>
+  <script>
+    set_wishlist_icon('<%= @product.id %>', false);
+  </script>
+<% end %>

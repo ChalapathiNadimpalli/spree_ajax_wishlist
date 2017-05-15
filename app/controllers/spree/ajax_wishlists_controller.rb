@@ -4,7 +4,7 @@ class Spree::AjaxWishlistsController < Spree::BaseController
   end
 
   def in_wishlist
-    active = valid_product && spree_current_user
+    active = valid_product && spree_current_user.present?
     active = Spree::Wishlist.active.where(user_id: spree_current_user.id, product_id: params[:product_id]).exists? if active
     render json: { result: active }
   end
