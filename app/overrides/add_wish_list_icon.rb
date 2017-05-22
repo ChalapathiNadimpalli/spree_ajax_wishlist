@@ -15,7 +15,7 @@ Deface::Override.new(
 Deface::Override.new(
   virtual_path: "spree/taxons/show",
   name: "add quick_response_js",
-  insert_after: "[data-hook='taxon_children']",
+  insert_after: "[data-hook='taxon_products']",
   partial: "spree/ajax_wishlists/quick_response",
 )
 

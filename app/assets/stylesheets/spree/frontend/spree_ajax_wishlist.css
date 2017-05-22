@@ -17,3 +17,13 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 .ajax-wishlist-icon .wishlist-icon.active {
   color: #FF6161;
 }
+
+.remove-wishlist-item {
+  background: transparent;
+  border: none;
+  font-weight: bold;
+}
+
+.remove-wishlist-item:hover {
+  text-decoration: underline;
+}

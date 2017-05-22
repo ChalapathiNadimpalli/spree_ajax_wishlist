@@ -1,7 +1,7 @@
 <% if spree_current_user %>
   <script>
       $(document).ready(function(){
-          $.getJSON('<%= in_wishlist_ajax_wishlists_path(product_id: @product.id) %>', function(data){
+          $.getJSON('<%= in_wishlist_wishlists_path(product_id: @product.id) %>', function(data){
               var active = false;
               if (data.result.toString() == 'true') {
                   active = true;
