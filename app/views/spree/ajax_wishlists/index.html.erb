@@ -1,0 +1,42 @@
+<div data-hook="wishlists">
+  <h3>
+    <%= Spree.t('wishlist')%>
+    <%= link_to(account_path, class: 'btn btn-primary pull-right') do %>
+        <span class='glyphicon glyphicon-list-alt'></span>
+        <%= Spree.t(:back_to_account) %>
+    <% end %>
+  </h3>
+
+  <table class="table index wishlist-table">
+    <tbody>
+    <% if @products.present? %>
+        <% @products.each do |product| %>
+            <% product_id = product.id %>
+            <tr class="wishlist-item-<%= product_id %>">
+              <td class="product-image" data-hook="product_image">
+                <%= link_to small_image(product), product %>
+              </td>
+              <td class="product-name" data-hook="product_name">
+                <h4><%= link_to product.name, product_path(product) %></h4>
+                <span class="product-description" data-hook="product_description">
+                  <%= product_description(product) %>
+                </span>
+              </td>
+              <td>
+                <%= form_tag toggle_wishlists_path, method: :post, remote: true do %>
+                    <%= hidden_field_tag :product_id, product_id %>
+                    <%= hidden_field_tag :active, false %>
+                    <%= button_tag class: "remove-wishlist-item",
+                                   name: 'remove-wishlist-button', value: 'user-account', type: :submit do %>
+                        <%= Spree.t('wishlist.remove') %>
+                    <% end %>
+                <% end %>
+              </td>
+            </tr>
+        <% end %>
+    <% else %>
+      <%= Spree.t(:no_products, scope: :wishlist) %>
+    <% end %>
+    </tbody>
+  </table>
+</div>

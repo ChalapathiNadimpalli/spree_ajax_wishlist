@@ -1,6 +1,12 @@
 class Spree::AjaxWishlistsController < Spree::BaseController
+  helper Spree::WishlistHelper
+  helper Spree::ProductsHelper
+
+  before_action :redirect_unauthorized_access, unless: :spree_current_user, only: :index
+
 
   def index
+    get_products
   end
 
   def in_wishlist
@@ -28,6 +34,15 @@ class Spree::AjaxWishlistsController < Spree::BaseController
   end
 
   private
+
+  def get_products
+    @products = Spree::Product.spree_base_scopes.active
+    @products = @products.joins(:wishlists)
+                    .where(spree_wishlists: { active: true, user_id: spree_current_user.id })
+    @products = @products.preload(master: :prices)
+    @products = @products.preload(master: :images)
+    @products = @products.order('spree_wishlists.updated_at desc')
+  end
 
   def active_status
     return (params[:active].to_s == 'true' ? true : false) if params[:active]

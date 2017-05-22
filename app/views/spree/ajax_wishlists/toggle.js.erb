@@ -3,6 +3,8 @@
 <% elsif @error %>
   <% flash[:error] = @error %>
   window.location = "<%= request.referer %>";
+<% elsif params['remove-wishlist-button'].present? %>
+  window.location = "<%= request.referer %>";
 <% elsif @active %>
   $(".wishlist-icon.product-id-<%= @product_id %>").addClass('active');
   $(".wishlist-active.product-id-<%= @product_id %>").val('false');

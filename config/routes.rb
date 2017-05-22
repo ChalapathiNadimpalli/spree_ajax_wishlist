@@ -1,5 +1,5 @@
 Spree::Core::Engine.routes.draw do
-  resources :ajax_wishlists, only: [] do
+  resources :wishlists, controller: 'ajax_wishlists', only: [:index] do
     collection do
       get :in_wishlist
       post :toggle
