@@ -46,8 +46,6 @@ require 'spree_ajax_wishlist/factories'
 
 ## Contributing
 
-If you'd like to contribute, please take a look at the
-[instructions](CONTRIBUTING.md) for installing dependencies and crafting a good
-pull request.
+If you'd like to contribute, feel free to raise a good pull request.
 
-Copyright (c) 2017 [name of extension creator], released under the New BSD License
+Copyright (c) 2017 Nadimpalli Chalapathi Raju, released under the New BSD License
