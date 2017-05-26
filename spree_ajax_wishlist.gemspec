@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
 
   s.author    = 'Chalapathi Raju'
   s.email     = 'css_raju@live.com'
-  s.homepage  = 'https://github.com/ChalapathiNadimpalli/spree_ajax_wishlist'
-  s.license = 'BSD-3'
+  s.homepage  = 'https://github.com/Imaginnovate/spree_ajax_wishlist'
+  s.license = 'MIT'
 
   # s.files       = `git ls-files`.split("\n")
   # s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")

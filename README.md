@@ -1,7 +1,7 @@
 SpreeAjaxWishlist
 =================
 
-Introduction goes here.
+Enables ajax based wishlist functionality.
 
 ## Installation
 
@@ -32,4 +32,4 @@ Introduction goes here.
 
 If you'd like to contribute, feel free to raise a good pull request.
 
-Copyright (c) 2017 Nadimpalli Chalapathi Raju, released under the New BSD License
+Copyright (c) 2017 Imaginnovate, released under the MIT License
