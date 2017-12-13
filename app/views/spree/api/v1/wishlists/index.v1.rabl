@@ -7,7 +7,8 @@ node :products do
       :small_image => product.images&.first&.attachment&.url(:small),
       :name => product.name,
       :slug => product.slug,
-      :description => product.description
+      :description => product.description,
+      :taxons => product.taxon_ids
     }
   end
 end
